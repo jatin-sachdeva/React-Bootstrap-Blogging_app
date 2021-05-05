@@ -7,7 +7,7 @@ const BlogList = (props) => {
 		<div>
 			<h2 className="mb-3">Your Blogs:</h2>
 			{blogs.map((blog) => (
-				<Media className="mx-auto mb-3  media-blogs-list w-100">
+				<Media className="mx-auto mb-3  media-blogs-list w-100" key={blog.id}>
 					<img
 						width={74}
 						height={74}
@@ -17,7 +17,7 @@ const BlogList = (props) => {
 					/>
 					<Media.Body>
 						<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>Media Heading</h6>
-						<h7 className="mb-0">author</h7>
+						<h6 className="mb-0">author</h6>
 						<p>fe19 3 min read</p>
 					</Media.Body>
 				</Media>
