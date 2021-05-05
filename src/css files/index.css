@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+	margin: 0;
+	font-family: "Quicksand";
+	color: #333;
+}
+
+/* for navbar*/
+.navbar-container {
+	background-color: whitesmoke;
+}
+.nav {
+	/* border: 2px solid black; */
+	justify-content: space-around;
+	font-size: 1.5vmax;
+}
+
+.navbar-brand {
+	color: #f1356d !important;
+	font-weight: bold;
+	font-size: 2vmax;
+}
+
+/* for Home*/
+.home {
+	margin-top: 2vmin;
+	padding: 20px;
+	width: 100%;
+	border: 1px solid red;
+}
+
+/*Blogs section*/
+.blogs-container {
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: no-wrap;
+	justify-content: space-around;
+}
+.blogs-container > * {
+	padding: 20px;
+}
+.big-blog {
+	border-right: 1px solid black;
+	width: 70%;
+}
+.blogs-list {
+	width: 50%;
+	/* border: 1px solid red; */
+}
+.media-blogs-list {
+	padding: 4px;
+	border-radius: 3px;
+}
+.media-blogs-list:hover {
+	background-color: whitesmoke;
+	cursor: pointer;
+}
+
+/*trending blogs */
+
+.trending-blogs-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.trending-blogs-media > * {
+	margin-bottom: 0;
+}
