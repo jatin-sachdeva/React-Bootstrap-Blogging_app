@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css files/index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NewBlog from './components/NewBlog';
+import DisplayBlog from './components/DisplayBlog';
 function App() {
 	return (
 		<Router>
@@ -16,6 +17,9 @@ function App() {
 						</Route>
 						<Route exact path="/create">
 							<NewBlog />
+						</Route>
+						<Route path="/blogs/:id">
+							<DisplayBlog />
 						</Route>
 					</Switch>
 				</div>

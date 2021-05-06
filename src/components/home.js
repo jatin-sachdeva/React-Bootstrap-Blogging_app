@@ -25,7 +25,9 @@ const Home = () => {
 
 				<div className="blogs-list">{blogs && <BlogList blogs={blogs} />}</div>
 			</div>
+
 			<hr />
+
 			<div className="trending-blogs">{blogs && <TrendingBlogs />}</div>
 			<div />
 		</div>
