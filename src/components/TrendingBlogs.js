@@ -1,10 +1,21 @@
-import { Media } from 'react-bootstrap';
+import { Media, Spinner } from 'react-bootstrap';
 import useFetch from '../custom hooks/useFetch';
 const TrendingBlogs = () => {
 	const { data, isLoading, isError } = useFetch('http://localhost:7000/blogs');
 	return (
 		<div>
 			<h3>Trending blogs</h3>
+			<div className="loading-error">
+				{isError && <h2>Error,response status is not OK</h2>}
+				{isLoading && (
+					<h2>
+						Loading
+						<Spinner animation="border" role="status" style={{ color: '#f1356d' }}>
+							<span className="sr-only">Loading...</span>
+						</Spinner>
+					</h2>
+				)}
+			</div>
 			<div style={{ width: '90%' }} className=" trending-blogs-container mx-auto">
 				{data &&
 					data.map((blog) => (

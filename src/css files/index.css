@@ -28,10 +28,17 @@
 	margin-top: 2vmin;
 	padding: 20px;
 	width: 100%;
-	border: 1px solid red;
 }
 
 /*Blogs section*/
+.loading-error {
+	width: 20%;
+	margin: auto;
+}
+.loading-error > * {
+	text-align: center;
+	width: 100%;
+}
 .blogs-container {
 	width: 100%;
 
