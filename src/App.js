@@ -18,7 +18,7 @@ function App() {
 						<Route exact path="/create">
 							<NewBlog />
 						</Route>
-						<Route path="/blogs/:id">
+						<Route path="/:type/:id">
 							<DisplayBlog />
 						</Route>
 					</Switch>

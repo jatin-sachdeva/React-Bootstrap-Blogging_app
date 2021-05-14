@@ -1,10 +1,14 @@
 import { Media, Spinner } from 'react-bootstrap';
 import useFetch from '../custom hooks/useFetch';
+import { Link } from 'react-router-dom';
 const TrendingBlogs = () => {
-	const { data, isLoading, isError } = useFetch('http://localhost:7000/blogs');
+	const { data, isLoading, isError } = useFetch('http://localhost:8000/trendingblogs');
 	return (
 		<div>
-			<h3>Trending blogs</h3>
+			<h3>
+				Trending blogs{' '}
+				<img width={24} src="https://cdn4.iconfinder.com/data/icons/social-45/32/trending-512.png" alt="img" />
+			</h3>
 			<div className="loading-error">
 				{isError && <h2>Error,response status is not OK</h2>}
 				{isLoading && (
@@ -19,7 +23,8 @@ const TrendingBlogs = () => {
 			<div style={{ width: '90%' }} className=" trending-blogs-container mx-auto">
 				{data &&
 					data.map((blog) => (
-						<Media className=" w-50 mx-auto p-2" key={blog.id}>
+						<Media style={{ borderRight: '1px solid grey' }} className=" w-50 mx-auto p-2" key={blog.id}>
+							<h2 className="mr-2">{blog.id}</h2>
 							<img
 								width={34}
 								height={34}
@@ -27,13 +32,16 @@ const TrendingBlogs = () => {
 								src="https://images.pexels.com/photos/7618308/pexels-photo-7618308.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
 								alt="jj"
 							/>
-							<Media.Body className="trending-blogs-media">
-								<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>Media Heading</h6>
+							<Link to={`/trendingblogs/${blog.id}`}>
+								<Media.Body className="trending-blogs-media">
+									<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>{blog.title}</h6>
 
-								<h6>{blog.title}</h6>
-								<h6>description of titledescription of titledescription of title</h6>
-								<p>ajabf</p>
-							</Media.Body>
+									<h6>
+										<b>By: {blog.author}</b>
+									</h6>
+									<p>feb 28</p>
+								</Media.Body>
+							</Link>
 						</Media>
 					))}
 			</div>

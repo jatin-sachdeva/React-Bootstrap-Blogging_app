@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 /* base styles */
+p {
+	font-size: 1.1rem;
+}
 * {
 	margin: 0;
 	font-family: "Quicksand";
@@ -73,13 +78,52 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	/* border: 1px solid black; */
+}
+.trending-blogs-container > *:hover {
+	box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 .trending-blogs-media > * {
 	margin-bottom: 0;
 }
+
+/*removing decoration from links*/
 a,
 a:hover {
 	text-decoration: none;
 	color: inherit;
+}
+
+/*display blogs section*/
+.display-blogs-container {
+	width: 100%;
+	margin-top: 2vmin;
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.display-blogs-container > * {
+	width: 70%;
+	margin: auto;
+	padding: 10px;
+}
+.display-blogs-blog-top {
+	width: 70%;
+	padding: 10px;
+	margin: auto;
+	border: 1px solid red;
+	text-align: center;
+}
+.display-blogs-blog-top > h1 {
+	font-size: 3rem;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.test {
+	align-items: center;
+}
+
+.display-blogs-blog-bottom > h2 {
+	font-family: 'Roboto Condensed', sans-serif;
 }

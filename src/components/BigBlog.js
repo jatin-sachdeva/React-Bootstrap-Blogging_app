@@ -1,18 +1,23 @@
 import { Card } from 'react-bootstrap';
 const BigBlog = () => {
 	return (
-		<Card style={{ width: '90%' }}>
+		<Card style={{ width: '95%' }}>
 			<Card.Img
 				className="mx-auto"
 				style={{ width: '80%' }}
 				variant="top"
-				src="https://images.pexels.com/photos/3560168/pexels-photo-3560168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+				src="https://miro.medium.com/max/2400/1*y6C4nSvy2Woe0m7bWEn4BA.png"
 			/>
 			<Card.Body className="mx-auto" style={{ width: '80%' }}>
-				<Card.Title className="card-title">efefe</Card.Title>
-				<Card.Subtitle>fefef</Card.Subtitle>
+				<Card.Title className="card-title mb-2">
+					<b style={{ color: '#f1356d' }}>How to Learn React — A roadmap from beginner to advanced</b>
+				</Card.Title>
+				<Card.Subtitle className="mb-2">
+					<b>By: Srebalaji Thirumalai</b>
+				</Card.Subtitle>
 				<Card.Text>
-					Some quick example text to build on the card title and make up the bulk of the card's content.
+					This guide is for people who are starting with React. I have carefully curated the best videos and
+					articles in each section to make it easier for learning.
 				</Card.Text>
 			</Card.Body>
 		</Card>

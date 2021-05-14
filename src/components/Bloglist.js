@@ -18,9 +18,12 @@ const BlogList = (props) => {
 							alt="jj"
 						/>
 						<Media.Body>
-							<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>Media Heading</h6>
-							<h6 className="mb-0">author</h6>
-							<p>fe19 3 min read</p>
+							<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>{blog.title}</h6>
+							<h6 className="mb-0">
+								<b>By:{blog.author}</b>
+								<br />
+								fe19 3min read
+							</h6>
 						</Media.Body>
 					</Media>
 				</Link>
