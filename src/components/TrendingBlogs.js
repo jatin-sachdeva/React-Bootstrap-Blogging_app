@@ -28,8 +28,9 @@ const TrendingBlogs = () => {
 							<img
 								width={34}
 								height={34}
+								style={{ borderRadius: '100%' }}
 								className="mr-2"
-								src="https://images.pexels.com/photos/7618308/pexels-photo-7618308.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+								src={blog.thumbnail}
 								alt="jj"
 							/>
 							<Link to={`/trendingblogs/${blog.id}`}>
