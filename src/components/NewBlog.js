@@ -12,10 +12,12 @@ const NewBlog = () => {
 
 	// a post request for the data
 	const handleSubmit = (e) => {
+		e.preventDefault(); // prevent the page from refreshing
 		setUploading(true);
-		e.preventDefault();
+
 		const data = { title, opening, heading, body, author: 'user', thumbnail, img };
 		console.log(data);
+		console.log('inside fn');
 		setTimeout(() => {
 			fetch('http://localhost:8000/blogs', {
 				method: 'POST',
@@ -26,10 +28,18 @@ const NewBlog = () => {
 			}).then(() => {
 				console.log('data uploaded');
 				setUploading(false);
+				clearInputs();
 			});
 		}, 1000);
 	};
-
+	const clearInputs = () => {
+		setImg('');
+		setThumbnail('');
+		setBody('');
+		setHeading('');
+		setOpening('');
+		setTitle('');
+	};
 	const handleChange = (e) => {
 		let target = e.target.name;
 		switch (target) {
@@ -56,7 +66,7 @@ const NewBlog = () => {
 		}
 	};
 	return (
-		<form className="newblog-form">
+		<form className="newblog-form" onSubmit={handleSubmit}>
 			<h2>New Blog</h2>
 			<div className="newblog-form-content">
 				<label>Title:</label>
@@ -121,12 +131,20 @@ const NewBlog = () => {
 						type="submit"
 						onClick={handleSubmit}
 						className="mx-auto mt-2 mb-2"
-						style={{ backgroundColor: '#f1356d' }}
+						style={{
+							backgroundColor: '#f1356d',
+							fontSize: '1.5rem',
+							fontFamily: "'Roboto Condensed', sans-serif"
+						}}
 					>
 						Create Blog
 					</Button>
 				) : (
-					<Button disabled className="mx-auto mt-2 mb-2" style={{ backgroundColor: '#f1356d' }}>
+					<Button
+						disabled
+						className="mx-auto mt-2 mb-2"
+						style={{ backgroundColor: '#f1356d', fontSize: '1.5rem' }}
+					>
 						Uploading
 					</Button>
 				)}

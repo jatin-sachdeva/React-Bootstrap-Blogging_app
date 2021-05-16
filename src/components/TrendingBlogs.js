@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const TrendingBlogs = () => {
 	const { data, isLoading, isError } = useFetch('http://localhost:8000/trendingblogs');
 	return (
-		<div>
+		<div style={{}}>
 			<h3>
 				Trending blogs{' '}
 				<img width={24} src="https://cdn4.iconfinder.com/data/icons/social-45/32/trending-512.png" alt="img" />
