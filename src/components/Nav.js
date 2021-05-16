@@ -11,12 +11,15 @@ const NavBarz = () => {
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="ml-auto w-25 nav">
 					<Nav.Link>
-						<Link to="/">Home</Link>
+						<Link to="/">
+							<b>Home</b>
+						</Link>
 					</Nav.Link>
 
 					<Nav.Link
 						href="/create"
 						style={{
+							color: 'whitesmoke',
 							backgroundColor: ' #f1356d',
 							borderRadius: '10px',
 							fontWeight: '600'

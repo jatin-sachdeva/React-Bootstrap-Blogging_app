@@ -10,7 +10,12 @@ const DisplayBlog = () => {
 			{blog && (
 				<div className="display-blogs-container">
 					<div className="display-blogs-blog-top">
-						<h1 style={{ fontSize: '3rem' }}>{blog.title}</h1>
+						<h1 style={{ fontSize: '3rem' }}>
+							{blog.title
+								.split(' ')
+								.map((x) => x.charAt(0).toUpperCase().concat(x.slice(1, x.length)))
+								.join(' ')}
+						</h1>
 						<Media className="mx-auto mb-3 w-25 test p-2" key={blog.id}>
 							<img
 								className="mr-2"
