@@ -170,3 +170,12 @@ input,
 textarea {
 	width: 60%;
 }
+.heart-already {
+	fill: red;
+}
+.heart-click {
+	fill: red;
+}
+.bookmark-click {
+	fill: lightskyblue;
+}
