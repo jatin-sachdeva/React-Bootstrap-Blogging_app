@@ -1,8 +1,7 @@
 import { useParams } from 'react-router';
 import useFetch from '../custom hooks/useFetch';
 import Patch from '../Patch';
-import { Button, Media } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
+import { Button, Media, Spinner } from 'react-bootstrap';
 
 const DisplayBlog = () => {
 	const { id, type } = useParams();
@@ -28,9 +27,23 @@ const DisplayBlog = () => {
 	};
 
 	return (
-		<div style={{ width: '100%', position: 'relative' }}>
+		<div className="display-blogs-body" style={{ width: '100%', minHeight: '100vh', marginTop: '0' }}>
+			{isError && <h2>Error,response status is not OK</h2>}
+			{isLoading && (
+				<Spinner
+					style={{
+						marginLeft: '50%',
+						marginTop: '300px',
+						color: '#f1356d'
+					}}
+					animation="grow"
+					role="status"
+				>
+					<span className="sr-only">Loading...</span>
+				</Spinner>
+			)}
 			{blog && (
-				<div style={{ width: '100%', position: 'relative' }}>
+				<div style={{ width: '100%' }}>
 					<div className="display-blogs-container">
 						<div className="display-blogs-blog-top">
 							<h1 style={{ fontSize: '3rem' }}>
@@ -57,7 +70,7 @@ const DisplayBlog = () => {
 								</Media.Body>
 							</Media>
 							<img className="mb-4 w-100" src={blog.img} alt="img" />
-							<h4>
+							<h4 style={{}}>
 								<i>{blog.opening}</i>
 							</h4>
 						</div>
