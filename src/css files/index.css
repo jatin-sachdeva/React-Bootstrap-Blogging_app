@@ -98,10 +98,12 @@ a:hover {
 
 /*display blogs section*/
 .display-blogs-body {
-	background-image: url("4.png");
+	/* background-image: url("6.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+	background-size: cover; */
+
+	background-image: linear-gradient(345deg, #ffffff 33%, #e17598 100%);
+
 	padding: 2vmin;
 }
 .display-blogs-container {
