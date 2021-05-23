@@ -34,7 +34,7 @@ const DisplayBlog = () => {
 					style={{
 						marginLeft: '50%',
 						marginTop: '300px',
-						color: '#f1356d'
+						color: 'black'
 					}}
 					animation="grow"
 					role="status"
@@ -52,18 +52,18 @@ const DisplayBlog = () => {
 									.map((x) => x.charAt(0).toUpperCase().concat(x.slice(1, x.length)))
 									.join(' ')}
 							</h1>
-							<Media className="mx-auto mb-3  test p-2" style={{ width: '30%' }} key={blog.id}>
+							<Media className="mx-auto mb-3  test p-2" style={{ width: '45%' }} key={blog.id}>
 								<img
 									className="mr-2"
 									width={34}
 									height={34}
-									src="https://images.pexels.com/photos/7618308/pexels-photo-7618308.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+									src={blog.thumbnail}
 									alt="jj"
 									style={{ borderRadius: '100%' }}
 								/>
-								<Media.Body className="text-left">
+								<Media.Body className="text-left" style={{}}>
 									<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>
-										{`By:${blog.author}`}
+										{`By: ${blog.author}`}
 										<br />
 										<span>3min read</span>
 									</h6>

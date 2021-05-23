@@ -1,15 +1,24 @@
 import { Button, Media } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { deleteEntry } from '../Delete';
+import { useState, useEffect } from 'react';
+import Modalmessage from './Modalmessage';
 
 const BlogList = (props) => {
 	const blogs = props.blogs;
-
+	const [ isModal, setModal ] = useState(false);
+	const handleDel = async (id) => {
+		const response = await deleteEntry('http://localhost:8000/blogs/' + id);
+		console.log(this);
+		if (response) {
+			setModal(true);
+		}
+	};
 	return (
 		<div>
 			<h2 className="mb-3">Your Blogs:</h2>
 			{blogs.map((blog) => (
-				<Media className="mx-auto mb-3  media-blogs-list w-100" key={blog.id}>
+				<Media className="mx-auto mb-3  media-blogs-list w-100" key={blog.id} id={blog.id}>
 					<img
 						width={74}
 						height={74}
@@ -27,16 +36,20 @@ const BlogList = (props) => {
 							</h6>
 						</Media.Body>
 					</Link>
-					<Button
-						size="sm"
-						onClick={() => {
-							deleteEntry('http://localhost:8000/blogs/${id}');
-						}}
-					>
-						Delete
-					</Button>
+					<Link to="/">
+						<Button
+							variant="dark"
+							size="sm"
+							onClick={() => {
+								handleDel(blog.id);
+							}}
+						>
+							Delete
+						</Button>
+					</Link>
 				</Media>
 			))}
+			{isModal && <Modalmessage />}
 		</div>
 		// <div className="blog-list">
 

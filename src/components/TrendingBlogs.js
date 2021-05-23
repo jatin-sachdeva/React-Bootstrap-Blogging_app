@@ -23,7 +23,7 @@ const TrendingBlogs = () => {
 			<div style={{ width: '90%' }} className=" trending-blogs-container mx-auto">
 				{data &&
 					data.map((blog) => (
-						<Media style={{ borderRight: '1px solid grey' }} className=" w-50 mx-auto p-2" key={blog.id}>
+						<Media style={{}} className=" w-50 mx-auto p-2" key={blog.id}>
 							<h2 className="mr-2">{blog.id}</h2>
 							<img
 								width={34}
