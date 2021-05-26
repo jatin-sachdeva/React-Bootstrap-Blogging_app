@@ -4,6 +4,11 @@ import Patch from '../Patch';
 import { Button, Media, Spinner } from 'react-bootstrap';
 
 const DisplayBlog = () => {
+	const thumbArr = [
+		'https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+		'https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+		'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg'
+	];
 	const { id, type } = useParams();
 	const { data: blog, isLoading, isError } = useFetch(`http://localhost:8000/${type}/${id}`);
 
@@ -58,9 +63,9 @@ const DisplayBlog = () => {
 									width={34}
 									height={34}
 									src={blog.thumbnail}
-									alt="jj"
 									style={{ borderRadius: '100%' }}
 								/>
+
 								<Media.Body className="text-left" style={{}}>
 									<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>
 										{`By: ${blog.author}`}

@@ -15,29 +15,24 @@ const BlogList = (props) => {
 		}
 	};
 	return (
-		<div>
+		<div style={{ maxHeight: '100%', overflowY: 'scroll' }} className="blogs-list-container">
 			<h2 className="mb-3">Your Blogs:</h2>
 			{blogs.map((blog) => (
 				<Media className="mx-auto mb-3  media-blogs-list w-100" key={blog.id} id={blog.id}>
-					<img
-						width={74}
-						height={74}
-						className="mr-4"
-						src="https://images.pexels.com/photos/7618308/pexels-photo-7618308.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-						alt="jj"
-					/>
+					<img width={74} height={74} className="mr-4" src={blog.thumbnail} alt="jj" />
 					<Link to={`/blogs/${blog.id}`}>
 						<Media.Body>
 							<h6 style={{ fontWeight: 'bold', color: '#f1356d' }}>{blog.title}</h6>
 							<h6 className="mb-0">
 								<b>By:{blog.author}</b>
 								<br />
-								fe19 3min read&nbsp;&nbsp;
+								{blog.date} {parseInt(Math.random() * 8)}min read
 							</h6>
 						</Media.Body>
 					</Link>
 					<Link to="/">
 						<Button
+							className="ml-4"
 							variant="dark"
 							size="sm"
 							onClick={() => {

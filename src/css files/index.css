@@ -46,6 +46,7 @@ p {
 }
 .blogs-container {
 	width: 100%;
+	height: 80vh;
 
 	display: flex;
 	flex-direction: row;
@@ -58,6 +59,12 @@ p {
 .big-blog {
 	border-right: 1px solid black;
 	width: 70%;
+}
+.blogs-list-container::-webkit-scrollbar-thumb {
+	background: #f1356d;
+}
+.blogs-list-container::-webkit-scrollbar-track {
+	background: #f1356d;
 }
 .blogs-list {
 	width: 50%;
@@ -95,6 +102,9 @@ a:hover {
 	text-decoration: none;
 	color: inherit;
 }
+svg:hover {
+	cursor: pointer;
+}
 
 /*display blogs section*/
 .display-blogs-body {
@@ -102,9 +112,13 @@ a:hover {
 	background-repeat: no-repeat;
 	background-size: cover; */
 
-	background-image: linear-gradient(345deg, #ffffff 33%, #e17598 100%);
+	background: linear-gradient(345deg, #ffffff 12%, #ee5e8b 100%);
+
+	background: linear-gradient(45deg, #8ec5fc 0%, #f1e8fc 50%, #e94f7d 100%);
 
 	padding: 2vmin;
+	animation: gradient 5s ease-in-out infinite;
+	background-size: 200% 200%;
 }
 .display-blogs-container {
 	background-color: white;
@@ -190,4 +204,26 @@ textarea {
 }
 .bookmark-click {
 	fill: lightskyblue;
+}
+
+.footer-container {
+	padding: 1vmin;
+	width: 100%;
+	background-color: #f1356d;
+	background-color: whitesmoke;
+	text-align: center;
+}
+.github:hover {
+	fill: #f1356d;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

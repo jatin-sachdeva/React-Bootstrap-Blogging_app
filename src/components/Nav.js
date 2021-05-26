@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 const NavBarz = () => {
 	return (
 		<Navbar expand="lg" className="navbar-container mb-0">
-			<Navbar.Brand className="navbar-brand" href="#home">
-				React-Bootstrap
-			</Navbar.Brand>
+			<Link to="/">
+				<Navbar.Brand className="navbar-brand" href="#home">
+					The Blog Inn
+				</Navbar.Brand>
+			</Link>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="ml-auto w-25 nav">

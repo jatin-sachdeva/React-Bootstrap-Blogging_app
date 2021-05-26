@@ -6,16 +6,34 @@ const NewBlog = () => {
 	const [ opening, setOpening ] = useState('');
 	const [ heading, setHeading ] = useState('');
 	const [ body, setBody ] = useState('');
-	const [ thumbnail, setThumbnail ] = useState('');
+	const [ thumbnail, setThumbnail ] = useState(null);
 	const [ img, setImg ] = useState('');
 	const [ uploading, setUploading ] = useState(false);
+	var months = [
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
+	];
+	const d = new Date();
+
+	const date = d.getDate();
+	const month = months[d.getMonth()];
 
 	// a post request for the data
 	const handleSubmit = (e) => {
 		e.preventDefault(); // prevent the page from refreshing
 		setUploading(true);
 
-		const data = { title, opening, heading, body, author: 'user', thumbnail, img };
+		const data = { title, opening, heading, body, author: 'user', thumbnail, img, date: date + month };
 		console.log(data);
 		console.log('inside fn');
 		setTimeout(() => {
@@ -56,10 +74,10 @@ const NewBlog = () => {
 				setBody(e.target.value);
 				break;
 			case 'thumbnail':
-				setThumbnail(e.target.value);
+				setThumbnail(URL.createObjectURL(e.target.files[0]));
 				break;
 			case 'img':
-				setImg(e.target.value);
+				setImg(URL.createObjectURL(e.target.files[0]));
 				break;
 			default:
 				break;
@@ -101,9 +119,9 @@ const NewBlog = () => {
 				/>
 				<label>Thumbnail Image:</label>
 				<input
+					type="file"
 					required
 					name="thumbnail"
-					value={thumbnail}
 					onChange={(e) => {
 						handleChange(e);
 					}}
@@ -111,8 +129,8 @@ const NewBlog = () => {
 				<label>Blog Image:</label>
 				<input
 					required
+					type="file"
 					name="img"
-					value={img}
 					onChange={(e) => {
 						handleChange(e);
 					}}

@@ -5,6 +5,7 @@ import './css files/index.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NewBlog from './components/NewBlog';
 import DisplayBlog from './components/DisplayBlog';
+import Footer from './components/Footer';
 function App() {
 	return (
 		<Router>
@@ -24,6 +25,7 @@ function App() {
 					</Switch>
 				</div>
 			</div>
+			<Footer />
 		</Router>
 	);
 }
