@@ -213,8 +213,11 @@ textarea {
 	background-color: whitesmoke;
 	text-align: center;
 }
-.github:hover {
+.github {
 	fill: #f1356d;
+}
+.github:hover {
+	fill: black;
 }
 @keyframes gradient {
 	0% {
